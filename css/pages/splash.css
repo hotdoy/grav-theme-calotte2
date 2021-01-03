@@ -1,0 +1,35 @@
+/*.page.splash {}*/
+
+.page.splash .header__logo svg {
+	color: var(--c-bg);
+}
+
+.splash__heading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	margin-top: calc(var(--header-height)*-1);
+	background-color: var(--c-blue-dark);
+	color: var(--c-bg);
+	opacity: 0;
+}
+
+.splash__heading h1 {
+	padding: var(--gutter);
+	text-align: center;
+	width: 100%;
+	max-width: var(--w-text);
+}
+
+[data-page-state^='complete'] .splash__heading {
+  opacity: 1;
+  transition-duration: 0.2s;
+}
+
+[data-page-state^='complete-navigating'] .splash__heading {
+  opacity: 0;
+  transition-duration: 0.1s;
+}

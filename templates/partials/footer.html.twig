@@ -1,46 +1,20 @@
 {% import 'partials/svg.html.twig' as svg %}
 
-{% set facebook = root_params.header.facebook_url %}
-{% set linkedin = root_params.header.linkedin_url %}
-{% set twitter = root_params.header.twitter_url %}
-
 <footer id="footer">
-	<div class="footer__wrapper text small stripped">
-
+	<div class="footer__wrapper text small">
 		<div class="footer__top">
-
-			<div class="footer__organization">
-				<div class="footer__logo">{{ svg.renard_white() }}</div>
-				<div class="footer__address">{{ root_params.header.address|markdown }}</div>
-				<div class="footer__contact">{{ root_params.header.contact|markdown }}</div>
-				<div class="footer__social">
-					{% if facebook %}<a href="{{ facebook }}">{{ svg.facebook() }}</a>{% endif %}
-					{% if linkedin %}<a href="{{ linkedin }}">{{ svg.linkedin() }}</a>{% endif %}
-					{% if twitter %}<a href="{{ twitter }}">{{ svg.twitter() }}</a>{% endif %}
-				</div>
-			</div>
 			<nav class="footer__nav">
 	            {% for item in root_params.header.footer_nav %}
-	            {% if item.links %}
-	            <li>
-	                <div>{{ item.label }}</div>
-	                <ul>
-	                    {% for link in item.links %}
-	                    {% set p = page.find(link.page) %}
-	                    <li><a href="{{ p.url() }}">{{ link.label }}</a></li>
-	                    {% endfor %}
-	                </ul>
+	            <li data-scroll>
+	                {% set p = page.find(item.page) %}
+	                <a href="{{ p.url() }}">{{ item.label }}</a>
 	            </li>
-	            {% endif %}
-	            {% endfor %}  
-	            {% include 'partials/langswitcher.html.twig' %}          
+	            {% endfor %}   
 			</nav>
 		</div>
-
 		<div class="footer__bottom">
 			<div class="footer__copyright">© {{ site.title }} {{ "now"|date("Y") }}</div>
 			<a class="footer__credit" href="https://calotte.ca">{{ svg.calotte() }}</a>
 		</div>
-
 	</div>
 </footer>

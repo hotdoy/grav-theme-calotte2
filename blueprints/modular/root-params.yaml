@@ -8,65 +8,10 @@ form:
       active: 1
       fields:
 
-        header:
-          type: tab
-          title: Header
-          fields:
-            header.header_nav:
-              name: header_nav
-              type: list
-              label: Header Nav
-              fields:
-                .label:
-                  type: text
-                  label: Label
-                .page:
-                  type: pages
-                  label: Page
-                  description: Destination page will be ignored and a dropdown will we generated if Links are added.
-                .links:
-                  name: links
-                  type: list
-                  label: Links
-                  fields:
-                    .label:
-                      type: text
-                      label: Label
-                    .page:
-                      type: pages
-                      label: Page
-            header.cta_label:
-              label: CTA Label
-              type: text
-            header.cta_url:
-              label: CTA URL
-              type: text
-
         footer:
           type: tab
           title: Footer
           fields:
-
-            header.address:
-              label: Address
-              type: editor
-
-            header.contact:
-              label: Contact
-              type: editor
-
-            header.facebook_url:
-              label: Facebook URL
-              type: text
-
-            header.linkedin_url:
-              label: LinkedIn URL
-              type: text
-
-            header.twitter_url:
-              label: Twitter URL
-              type: text
-
             header.footer_nav:
               name: footer_nav
               type: list
@@ -75,14 +20,6 @@ form:
                 .label:
                   type: text
                   label: Label
-                .links:
-                  name: links
-                  type: list
-                  label: Links
-                  fields:
-                    .label:
-                      type: text
-                      label: Label
-                    .page:
-                      type: pages
-                      label: Page
+                .page:
+                  type: pages
+                  label: Page

@@ -3,12 +3,9 @@ a.button,
 button.button {
     display: inline-block;
     position: relative;
-    background-color: var(--c-hl);
-    color: var(--c-white);
-    padding: 10px 15px;
+    color: var(--c-hl);
     font-size: small;
     line-height: 1;
-    border-radius: 2rem;
     width: auto;
     height: fit-content;
     text-align: center;
@@ -17,7 +14,25 @@ button.button {
     letter-spacing: 1px;
 }
 
-.button.waiting {
+.button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -13px;
+    width: 13px;
+    height: 13px;
+    background-image: url(../images/arrow-right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition-property: transform;
+    transition-duration: 0.2s;
+}
+
+.button:hover:after {
+    transform: translateX(5px);
+}
+
+/*.button.waiting {
     color: transparent;
 }
 
@@ -50,4 +65,4 @@ button.button {
         opacity: 0;
         transform: translateY(7px);
     }
-}
+}*/
