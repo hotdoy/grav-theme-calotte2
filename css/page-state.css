@@ -6,24 +6,5 @@
 	transform: translateY(20px);
 }
 
-/*HEADER*/
-[data-page-state] #header {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition-property: opacity, transform;
-  transition-duration: 0.2s;
-}
-
-[data-page-state^='complete'] #header {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-[data-page-state^='complete-navigating'] #header {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition-duration: 0.1s;
-}
-
 
 

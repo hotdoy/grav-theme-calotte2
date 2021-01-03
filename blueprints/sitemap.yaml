@@ -11,11 +11,8 @@ form:
               unset@: true
             header.media_order:
               unset@: true
-
-            header.note:
-              type: section
-              title: "NOTHING TO SEE HERE. MOVE ALONG ;)"
-
+            header.display_title:
+              unset@: true
             header.template_format:
               type: text
               label: template_format

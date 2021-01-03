@@ -1,5 +1,6 @@
 /*.page.splash {}*/
 
+/*HEADER OVERWRITE*/
 .page.splash .header__logo svg {
 	color: var(--c-bg);
 }
@@ -15,6 +16,16 @@
 	background-color: var(--c-blue-dark);
 	color: var(--c-bg);
 	opacity: 0;
+
+	animation-name: splash-heading;
+	animation-delay: 2s;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes splash-heading {
+	from {}
+	to {background-color: #000000;}
 }
 
 .splash__heading h1 {
@@ -24,12 +35,24 @@
 	max-width: var(--w-text);
 }
 
+@media (min-width: 1200px) {
+	.splash__heading h1 {
+		font-size: 48px;
+	}
+}
+
+
+/*PAGE-STATE TRANSITIONS*/
 [data-page-state^='complete'] .splash__heading {
   opacity: 1;
-  transition-duration: 0.2s;
+  transition-duration: 0.5s;
 }
 
 [data-page-state^='complete-navigating'] .splash__heading {
   opacity: 0;
   transition-duration: 0.1s;
 }
+
+
+
+
