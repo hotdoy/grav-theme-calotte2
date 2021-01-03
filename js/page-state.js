@@ -42,8 +42,8 @@ const PageState = {
         PageState.TrackBeforeUnload();
         ScrollOut({
             cssProps: {
-                viewportY: true,
-                visibleY: true
+                // viewportY: true,
+                // visibleY: true
             }   
         });
     },
