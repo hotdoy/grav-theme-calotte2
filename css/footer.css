@@ -31,13 +31,6 @@
     text-align: center;
 }
 
-@media (min-width: 835px) {
-    .footer__nav {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
 .footer__nav li a {
     display: inline-block;
     position: relative;
@@ -54,13 +47,6 @@
 
 .footer__nav>li:not(:first-child) {
     margin-top: 1rem;
-}
-
-@media (min-width: 835px) {
-    .footer__nav li,
-    .footer__nav>li:not(:first-child) {
-        margin-top: 0;
-    }
 }
 
 .footer__bottom {
