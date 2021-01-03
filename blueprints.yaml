@@ -1,13 +1,13 @@
 name: calotte2
 slug: calotte2
 type: theme
-version: 0.1.0
+version: 1.0.0
 description: calotte2 theme for Grav CMS.
 icon: rebel
 author:
   name: Calotte
 homepage: https://github.com/hotdoy/grav-theme-calotte2/
-keywords: calotte2, grav, theme
+keywords: Calotten Calotte2, grav, theme.
 bugs: https://github.com/hotdoy/grav-theme-calotte2/issues
 readme: https://github.com/hotdoy/grav-theme-calotte2/blob/master/README.md
 license: MIT
