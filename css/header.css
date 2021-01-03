@@ -1,0 +1,13 @@
+#header {
+	position: relative;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	padding: var(--gutter);
+	z-index: 5000;
+}
+
+.header__logo svg {
+	width: 81px;
+    height: auto;
+}

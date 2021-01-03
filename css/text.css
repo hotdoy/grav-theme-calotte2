@@ -1,0 +1,130 @@
+.text h1, h1.text {
+    font-family: var(--font-alt);
+    font-size: xx-large;
+    line-height: 1.4;
+    font-weight: var(--fw-bold);
+}
+
+@media (min-width: 835px) {
+    .text h1, h1.text {
+        font-size: xx-large;
+    }
+}
+
+.text h2, h2.text {
+    font-family: var(--font-alt);
+    font-size: x-large;
+    line-height: 1.4;
+    font-weight: var(--fw-bold);
+    margin-top: 2rem;
+}
+
+@media (min-width: 835px) {
+    .text h2, h2.text {
+        font-size: xx-large;
+    }
+}
+
+.text h3, h3.text {
+    font-family: var(--font-alt);
+    font-size: x-large;
+    line-height: 1.4;
+    margin-top: 2rem;
+}
+
+@media (min-width: 835px) {
+    .text h3, h3.text {
+        font-size: large;
+    }
+}
+
+
+.text h4, h4.text,
+.text h5, h5.text,
+.text h6, h6.text {
+    font-size: large;
+    margin-top: 2rem;
+    line-height: 1.4;
+    font-weight: var(--fw-bold);
+}
+
+.text p {
+    margin-top: 1rem;
+    font-size: medium;
+    line-height: 1.9;
+}
+
+.text p:empty {
+    display: none;
+}
+
+.text strong {
+    font-size: inherit;
+    font-weight: var(--fw-bold);
+}
+
+.text em {
+    font-size: inherit;
+    font-style: italic;
+}
+
+.text sup {
+    font-size: x-small;
+}
+
+.text blockquote {
+    margin-top: 0;
+    font-size: xx-large;
+    line-height: 1.1;
+    font-weight: var(--fw-bold);
+}
+
+.text blockquote>p {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.text ul {
+    margin-top: 2rem;
+    font-size: inherit;
+    line-height: 1.6;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+
+.text ol {
+    margin-top: 2rem;
+    font-size: inherit;
+    line-height: 1.6;
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.text li>p {
+    display: inline;
+    font-size: inherit;
+    padding: 0;
+}
+
+.text a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.text.small p, p.text.small {
+    font-size: small;
+    line-height: 1.4;
+}
+
+.text.small h1, h1.text.small,
+.text.small h2, h2.text.small,
+.text.small h3, h3.text.small,
+.text.small h4, h4.text.small,
+.text.small h5, h5.text.small,
+.text.small h6, h6.text.small {
+    font-weight: var(--fw-bold);
+    font-size: medium;
+    line-height: 1.2;
+}

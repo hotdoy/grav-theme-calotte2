@@ -1,0 +1,25 @@
+title: Root Params
+
+form:
+  validation: loose
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+
+        footer:
+          type: tab
+          title: Footer
+          fields:
+            header.footer_nav:
+              name: footer_nav
+              type: list
+              label: Footer Nav
+              fields:
+                .label:
+                  type: text
+                  label: Label
+                .page:
+                  type: pages
+                  label: Page

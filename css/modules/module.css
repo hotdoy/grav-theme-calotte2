@@ -1,0 +1,13 @@
+.module {
+  position: relative;
+  margin-top: var(--rhythm);
+  z-index: 1000;
+}
+
+.module.hero + .module.hero {
+  margin-top: var(--gutter);
+}
+
+.module-header + .module {
+  margin-top: var(--gutter);
+}

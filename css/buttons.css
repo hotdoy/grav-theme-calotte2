@@ -1,0 +1,68 @@
+.button,
+a.button,
+button.button {
+    display: inline-block;
+    position: relative;
+    color: var(--c-hl);
+    font-size: small;
+    line-height: 1;
+    width: auto;
+    height: fit-content;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 13px;
+    height: 13px;
+    background-image: url(../images/arrow-right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition-property: transform;
+    transition-duration: 0.2s;
+}
+
+.button:hover:after {
+    transform: translateX(5px);
+}
+
+/*.button.waiting {
+    color: transparent;
+}
+
+.button.waiting:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    background-color: var(--c-white);
+    animation-name: button_waiting;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes button_waiting {
+    0% {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+}*/

@@ -1,0 +1,20 @@
+{% import 'partials/svg.html.twig' as svg %}
+
+<footer id="footer">
+	<div class="footer__wrapper text small">
+		<div class="footer__top">
+			<nav class="footer__nav">
+	            {% for item in root_params.header.footer_nav %}
+	            <li data-scroll>
+	                {% set p = page.find(item.page) %}
+	                <a href="{{ p.url() }}">{{ item.label }}</a>
+	            </li>
+	            {% endfor %}   
+			</nav>
+		</div>
+		<div class="footer__bottom">
+			<div class="footer__copyright">© {{ site.title }} {{ "now"|date("Y") }}</div>
+			<a class="footer__credit" href="https://calotte.ca">{{ svg.calotte() }}</a>
+		</div>
+	</div>
+</footer>

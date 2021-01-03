@@ -1,0 +1,37 @@
+{# PRELOAD #}
+<link rel="preload" href="{{ url('theme://fonts/roboto/roboto-v20-latin-regular.woff2', true) }}" as="font" crossorigin>
+<link rel="preload" href="{{ url('theme://fonts/lexend-deca/lexend-deca-v4-latin-regular.woff2', true) }}" as="font" crossorigin>
+
+{# LIBS #}
+{# {% do assets.addCss('theme://libs/swiper/swiper.min.css') %} #}
+{% do assets.addCss('theme://libs/lite-yt-embed/lite-yt-embed.css') %}
+
+{# THEME #}
+{% do assets.addCss('theme://css/reset.css') %}
+{% do assets.addCss('theme://css/text.css') %}
+{% do assets.addCss('theme://css/theme.css') %}
+{% do assets.addCss('theme://css/page-state.css') %}
+{% do assets.addCss('theme://css/scroll-out.css') %}
+
+{# MISC #}
+{% do assets.addCss('theme://css/header.css') %}
+{% do assets.addCss('theme://css/footer.css') %}
+{% do assets.addCss('theme://css/buttons.css') %}
+
+{# MODULES #}
+{% do assets.addCss('theme://css/modules/module.css') %}
+{% do assets.addCss('theme://css/modules/editor.css') %}
+{% do assets.addCss('theme://css/modules/editor-2-col.css') %}
+{% do assets.addCss('theme://css/modules/mediatext.css') %}
+
+{# PAGES #}
+{% do assets.addCss('theme://css/pages/default.css') %}
+{% do assets.addCss('theme://css/pages/splash.css') %}
+{% do assets.addCss('theme://css/pages/error.css') %}
+{% do assets.addCss('theme://css/pages/form.css') %}
+
+{# UTILS #}
+{% do assets.addCss('theme://css/utils.css', 2) %}
+
+{# CUSTOM #}
+{% do assets.addCss('theme://css/custom.css', 1) %}

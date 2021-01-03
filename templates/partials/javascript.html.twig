@@ -1,0 +1,24 @@
+{# INLINE #}
+{% do assets.addJs('theme://js/page-state-init.js', {loading : 'inline'}) %}
+
+{# CDN #}
+{% do assets.addJs('https://unpkg.com/scroll-out/dist/scroll-out.min.js', { group:'bottom' }) %}
+
+{# LIBS #}
+{% do assets.addJs('theme://libs/swiper/swiper.min.js', { group:'bottom' }) %}
+{% do assets.addJs('theme://libs/lite-yt-embed/lite-yt-embed.js', { group:'bottom' }) %}
+
+{# MISC #}
+{% do assets.addJs('theme://js/page-state.js', { group:'bottom' }) %}
+{% do assets.addJs('theme://js/links.js', { group:'bottom'}) %}
+{% do assets.addJs('theme://js/header.js', { group:'bottom' }) %}
+{% do assets.addJs('theme://js/active.js', { group:'bottom' }) %}
+{% do assets.addJs('theme://js/pagination.js', { group:'bottom' }) %}
+{% do assets.addJs('theme://js/scroll-out.js', { group:'bottom' }) %}
+
+{# MODULES #}
+
+{# PAGES #}
+
+{# CUSTOM #}
+{% do assets.addJs('theme://js/custom.js', { group:'bottom' }) %}

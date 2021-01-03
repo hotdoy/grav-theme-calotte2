@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	{# HEADING #}
+	<section class="splash__heading text">
+		<h1 data-scroll>{{ page.header.display_title }}</h1>
+	</section>
+	
+	{# CONTENT #}
+	{% if page.content %}
+	{% include 'modular/editor.html.twig' %}
+	{% endif %}
+
+	{# MODULES #}
+	{% for module in page.collection({ items: {'@self.modular':''}, 'order': {'by':'folder', 'dir':'asc'}}) %}
+	{{ module.content|raw }}
+	{% endfor %}
+
+{% endblock %}

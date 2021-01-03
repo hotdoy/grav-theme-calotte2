@@ -1,0 +1,50 @@
+name: calotte2
+slug: calotte2
+type: theme
+version: 1.0.0
+description: calotte2 theme for Grav CMS.
+icon: rebel
+author:
+  name: Calotte
+homepage: https://github.com/hotdoy/grav-theme-calotte2/
+keywords: Calotten Calotte2, grav, theme.
+bugs: https://github.com/hotdoy/grav-theme-calotte2/issues
+readme: https://github.com/hotdoy/grav-theme-calotte2/blob/master/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: ">=1.6.0" }
+
+form:
+  validation: loose
+  fields:
+
+    ga:
+      type: section
+      title: Google Analytics
+      underline: true
+
+    gtm_container_id:
+      type: text
+      label: GTM Container ID
+      placeholder: "GTM-ZXCVB00"
+
+    facebook:
+      type: section
+      title: Facebook
+      underline: true
+
+    facebook_app_id:
+      type: text
+      label: Facebook App Id
+      placeholder: "123456789123456"
+
+    twitter:
+      type: section
+      title: Twitter
+      underline: true
+
+    twitter_site:
+      type: text
+      label: Twitter Site
+      placeholder: "@twitter_handle"
