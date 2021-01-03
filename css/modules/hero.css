@@ -1,0 +1,66 @@
+/* .module.hero {} */
+
+.module.hero > .wrapper {
+  position: relative;
+  max-width: var(--width-body);
+  margin: 0 auto;
+  min-height: 450px;
+}
+
+@media (min-width: 835px) {
+  .module.hero > .wrapper {
+    min-height: 550px;
+  }
+}
+
+.module.hero .media-ctn {
+  margin: 0 var(--gutter);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.module.hero .media-ctn img,
+.module.hero .media-ctn video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.module.hero .content-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 var(--gutter);
+  padding: 0 calc(var(--gutter) * 2);
+  color: var(--color-fg);
+  text-align: center;
+}
+
+.module.hero h2 {
+  font-weight: 700;
+  margin: 0;
+}
+
+.module.hero p {
+  margin-top: 10px;
+}
+
+.module.hero .button {
+  margin-top: 20px;
+}
+
+.module.hero > .wrapper:hover .button {
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);;
+}
+
+.module.hero > .wrapper:hover:active .button {
+  transition-duration: 0s;
+  transform: translateY(1px);
+}
+
+.module.hero .button {
+  color: var(--color-btn-fg, white);
+  background-color: var(--color-btn-bg, var(--color-hl));
+}

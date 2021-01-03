@@ -1,0 +1,53 @@
+.button,
+a.button,
+button.button {
+    display: inline-block;
+    position: relative;
+    background-color: var(--c-hl);
+    color: var(--c-white);
+    padding: 10px 15px;
+    font-size: small;
+    line-height: 1;
+    border-radius: 2rem;
+    width: auto;
+    height: fit-content;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button.waiting {
+    color: transparent;
+}
+
+.button.waiting:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    background-color: var(--c-white);
+    animation-name: button_waiting;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes button_waiting {
+    0% {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+}

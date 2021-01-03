@@ -1,0 +1,31 @@
+title: editor 2-col
+"@extends": modular/module
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+              unset@: true
+
+            columns:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  fields:
+                    header.content1:
+                        type: markdown
+                        validate:
+                          type: textarea
+                column2:
+                  type: column
+                  fields:
+                    header.content2:
+                        type: markdown
+                        validate:
+                          type: textarea

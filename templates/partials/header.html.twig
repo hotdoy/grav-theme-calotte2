@@ -1,0 +1,29 @@
+{% import 'partials/svg.html.twig' as svg %}
+
+<header id="header">
+    <div class="header__wrapper">
+        <a class="header__logo" href="{{ home_url }}" aria-label="Logo">{{ svg.renard() }}</a>
+        <nav class="header__nav">
+            {% for item in root_params.header.header_nav %}
+            {% if item.links %}
+            <li class="group">
+                <div class="group__label">{{ item.label }} {{ svg.arrow_down() }}</div>
+                <ul>
+                    <div class="group__panel">
+                        {% for link in item.links %}
+                        {% set p = page.find(link.page) %}
+                        <li><a href="{{ p.url() }}">{{ link.label }}</a></li>
+                        {% endfor %}
+                    </div>
+                </ul>
+            </li>
+            {% else %}
+            {% set p = page.find(item.page) %}
+            <li><a href="{{ p.url() }}">{{ item.label }}</a></li>
+            {% endif %}
+            {% endfor %}
+            <a class="header__cta button" href="{{ root_params.header.cta_url }}">{{ root_params.header.cta_label }}</a>
+            {% include 'partials/langswitcher.html.twig' %}
+        </nav>
+    </div>
+</header>

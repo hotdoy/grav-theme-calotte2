@@ -1,0 +1,63 @@
+/*.module.quotes {}*/
+
+.module.quotes .wrapper {
+    position: relative;
+    width: 100%;
+    max-width: var(--w-body);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+
+}
+
+.module.quotes .icon-ctn {
+    display: flex;
+    justify-content: center;
+}
+
+.module.quotes .icon-ctn svg {
+    width: 75px;
+    height: auto;
+}
+
+.module.quotes .swiper-container {
+    height: auto;
+    width: 100%;
+}
+
+.module.quotes .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding-top: calc(var(--gutter)*2);
+    padding-bottom: calc(var(--gutter)*4);
+    background-color: var(--c-bg);
+}
+
+.module.quotes blockquote {
+    font-weight: normal;
+    font-size: large;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: var(--w-text);
+}
+
+@media (min-width: 835px) {
+    .module.quotes blockquote {
+        font-size: x-large;
+    }
+}
+
+.module.quotes .source {
+    margin-top: var(--gutter);
+    font-size: small;
+}
+
+.module.quotes .swiper-pagination {}
+
+.module.quotes .swiper-pagination-bullet,
+.module.quotes .swiper-pagination-bullet-active {
+    background: var(--c-hl);
+}

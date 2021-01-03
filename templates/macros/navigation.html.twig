@@ -1,0 +1,13 @@
+
+{# NAV TREE LOOP #}
+{% macro tree(pages) %}
+    {% for p in pages.children.visible %}
+    <li class="{{ (p.active or p.activeChild) ? ' active' : '' }}"><a href="{{ p.url }}">{{ p.menu }}</a>
+        {% if p.children.visible %}
+        <ul>
+            {{ _self.tree(p) }} 
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+{% endmacro %}

@@ -1,0 +1,121 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set main_image = page.header.main_image ? page.media[page.header.main_image] %}
+{% set main_image_alt = page.header.main_image_alt ?? '' %}
+{% set gallery_images = page.header.gallery_images %}
+{% set price = page.header.price|number_format(2, ',', ' ') %}
+
+{% block head_extra %}
+<meta name="uid" content="{{ page.id() }}">
+{% endblock %}
+
+{% block content %}
+
+	{# SHOWCASE #}
+	<section class="module product-showcase" data-scroll>
+		<div class="wrapper">
+
+			<div class="media-ctn">
+
+				{# SWIPER #}
+				{% if gallery_images %}
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						{% if main_image %}
+						<div class="swiper-slide">
+							<div class="fill">{{ main_image.html('', main_image_alt) }}</div>
+						</div>
+						{% endif %}
+						{% for item in gallery_images %}
+						<div class="swiper-slide">
+							{% set image = item.image ? page.media[item.image] %}
+							{% set image_alt = item.image_alt ?? '' %}
+							{% if image %}
+							<div class="fill">{{ image.html('', image_alt) }}</div>
+							{% endif %}
+						</div>
+						{% endfor %}
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+
+				{# SINGLE IMAGE	 #}
+				{% elseif main_image %}
+				<div class="single-image">
+					<div class="fill">{{ main_image.html('', main_image_alt) }}</div>
+				</div>
+				{% endif %}
+
+			</div>
+
+			<div class="content-ctn">
+				<div class="sticky-ctn">
+					{% include 'partials/breadcrumbs.html.twig' %}
+				    {% set title = page.header.display_title ?? page.title %}
+				    <h1 class="name">{{ title }}</h1>
+					<div class="description text">{{ page.content|raw }}</div>
+					<div class="price">{{ price }} $</div>
+			
+					{% if theme.snipcart_enabled and theme.snipcart_public_key %}
+					<button class="snipcart-add-item button"
+					data-item-id="{{ page.header.id }}"
+					data-item-price="{{ page.header.price }}"
+					data-item-url="{{ page.url(true, true) }}"
+					data-item-description="{{ page.header.short_description }}"
+					data-item-image="{{ main_image ? uri.base() ~ main_image.url : '' }}"
+					data-item-name="{{ page.header.name }}"
+					data-item-stackable="{{ page.header.stackable ? 'auto' : 'never' }}"
+					{% if page.header.digital_good_guid %}
+					data-itemfile-guid="{{ page.header.digital_good_guid }}"
+					{% endif %}
+					{% for field in page.header.custom_fields %}
+					data-item-custom{{ loop.index }}-name="{{ field.name }}"
+					data-item-custom{{ loop.index }}-type="{{ field.type }}"
+					{% if field.type == 'select' %}
+					data-item-custom{{ loop.index }}-options="{{ field.options }}"
+					{% endif %}
+					{% endfor %}
+					{% if page.header.width %}
+					data-item-width="{{ page.header.width }}"
+					{% endif %}
+					{% if page.header.height %}
+					data-item-height="{{ page.header.height }}"
+					{% endif %}
+					{% if page.header.weight %}
+					data-item-weight="{{ page.header.weight }}"
+					{% endif %}
+					>
+					{{ 'THEME.CART.ADD'|t }}
+					</button>
+					{% else %}
+					<div class="button disabled snipcart-add-item {{ class }}">{{ 'THEME.CART.DISABLED'|t }}</div>
+					{% endif %}
+
+					<div class="instruction">{{ 'THEME.CART.INSTRUCTION'|t }}</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# MODULES #}
+	{% for module in page.collection({ items: {'@self.modular':''}, 'order': {'by':'folder', 'dir':'asc'}}) %}
+	{{ module.content|raw }}
+	{% endfor %}
+
+	{# DIVIDER #}
+	<div class="divider"><hr></div>
+
+	{# RELATED #}
+    {% set related_options = { items: {'@self.siblings':''}, 'limit': 6, 'order': {'by': 'random'}} %}
+    {% set related_items = page.collection(related_options) %}
+    {% include 'modular/carousel.html.twig' with { 'collection': related_items, 'title': 'THEME.PRODUCT.RELATED'|t } %}
+
+    {# PREVIOUSLY LOOKED AT ITEMS #}
+{# 	{% set options = { items: {'@root.descendants':''} } %}
+	{% set pages = page.collection(options) %}
+	{% for page in pages if page.routable and page.id() == currentId %}
+		{{ page.id() }}
+	{% endfor %} #}
+
+{% endblock %}

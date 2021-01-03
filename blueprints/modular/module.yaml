@@ -1,0 +1,53 @@
+title: module
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.display_title:
+              unset@: true
+        options:
+          fields:
+            publishing:
+              fields:
+                header.date:
+                  unset@: true
+                header.metadata:
+                  unset@: true
+                header.page_title:
+                  unset@: true
+                header.meta_description:
+                  unset@: true
+                header.meta_image:
+                  unset@: true
+            taxonomies:
+              unset@: true
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.dateformat:
+                  unset@: true
+                header.menu:
+                  unset@: true
+                header.slug:
+                  unset@: true
+                header.redirect:
+                  unset@: true
+                header.child_type:
+                  unset@: true
+                header.routable:
+                  unset@: true
+                header.visible:
+                  unset@: true
+                header.debugger:
+                  unset@: true
+                header.append_url_extension:
+                  unset@: true
+            routes_only:
+              unset@: true
+            admin_only:
+              unset@: true

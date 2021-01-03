@@ -1,0 +1,47 @@
+/*
+For Grav Plugin: Markdown Notices.
+Make sure to disable built-in CSS.
+*/
+
+.notices {
+  position: relative;
+  width: 100%;
+  max-width: var(--width-text);
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-small);
+}
+
+.notices > *:nth-child(1) {
+  margin-top: 0;
+}
+
+.notices a,
+.content .notices a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*====================================== 
+                THEMES
+ ======================================*/
+
+.notices.yellow {
+  background: #ffab00;
+  color: #172b4d;
+}
+
+.notices.red {
+  background-color: #de350b;
+  color: #fff;
+}
+
+.notices.blue {
+  background: #42526e;
+  color: #ffffff;
+}
+
+.notices.green {
+  background: #00875a;
+  color: #fff;
+}

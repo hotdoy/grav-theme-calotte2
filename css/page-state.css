@@ -1,0 +1,32 @@
+/*#MAIN*/
+[data-page-state^='complete-navigating'] #main {
+	transition-duration: 0.2s;
+	transition-property: opacity, transform;
+	opacity: 0;
+	transform: translateY(20px);
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+/*HEADER*/
+
+[data-page-state] #header {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-property: opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+[data-page-state^='complete'] #header {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+[data-page-state^='complete-navigating'] #header {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition-duration: 0.1s;
+}
+
+
+

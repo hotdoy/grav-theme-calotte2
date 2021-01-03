@@ -1,0 +1,58 @@
+title: hero
+"@extends": modular/module
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+          fields:
+
+            header.mp4:
+              label: Mp4
+              type: pagemediaselect
+              accept:
+                - webm
+
+            header.webm:
+              label: WebM
+              type: pagemediaselect
+              accept:
+                - webm
+
+            header.image:
+              label: Image
+              type: pagemediaselect
+
+            header.image_alt:
+              label: Image Alt
+              type: text
+
+            header.label:
+              label: Label
+              type: text
+
+            header.url:
+              label: url
+              type: text
+
+            header.color_bg:
+              type: colorpicker
+              label: Color - Background
+
+            header.color_fg:
+              type: colorpicker
+              label: Color - Foreground
+
+            header.color_btn_bg:
+              type: colorpicker
+              label: Color - Button Background
+
+            header.color_btn_fg:
+              type: colorpicker
+              label: Color - Button Foreground

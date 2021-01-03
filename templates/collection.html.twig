@@ -1,0 +1,47 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set start = 0 %}
+{% set step = 6 %}
+{% set qs_key = 'articles' %}
+{% set qs_values = uri.query(qs_key)|split('-') %}
+{% set qs_start = qs_values[0]|default(0) %}
+{% set qs_end = qs_values[1] ?? step %}
+{% set new_qs_start = qs_end %}
+{% set new_qs_end = new_qs_start + step %}
+{% set raw_collection_params = { items: {'@self.children':''}, 'order': {'by': 'folder', 'dir': 'asc'}} %}
+{% set raw_collection = page.collection(raw_collection_params) %}
+{% set raw_collection_length = raw_collection|length %}
+{% set collection_params = { items: {'@self.children':''}, 'limit': qs_end, 'order': {'by': 'folder', 'dir': 'asc'}} %}
+{% set collection = page.collection(collection_params) %}
+{% set collection = collection|slice(qs_start, qs_end) %}
+
+{% block content %}
+
+    {# HEADER #}
+    {% include 'partials/default-heading.html.twig' %}
+    
+    {# LIST #}
+    <section class="module collection" data-scroll>
+        <div class="wrapper">
+            <div class="grid grid--4" data-pagination-list>
+            {% for item in collection %}
+            {% include ['partials/card-' ~ item.template ~ '.html.twig', 'partials/card.html.twig' ] with {'item': item} %}
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {# PAGINATION #}
+    <section class="pagination" data-pagination-ctn>
+        {% if new_qs_start + 1 <= raw_collection_length %}
+        {% set url = (page.url ~ '?' ~ qs_key ~ '=' ~ new_qs_start ~ '-' ~ new_qs_end) %}
+        <button class="button" href="{{ url }}" data-pagination-btn>{{ 'THEME.LOAD_MORE'|t }}</button>
+        {% endif %}
+    </section>
+
+    {# MODULES #}
+    {% for module in page.collection({ items: {'@self.modular':''}, 'order': {'by':'folder', 'dir':'asc'}}) %}
+    {{ module.content|raw }}
+    {% endfor %}
+
+{% endblock %}

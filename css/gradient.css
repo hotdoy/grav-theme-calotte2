@@ -1,0 +1,25 @@
+.gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.gradient__1 {
+	position: absolute;
+	left: 0;
+	width: 500px;
+	height: 500px;
+	border-radius: 100%;
+	background: radial-gradient(circle, rgba(255,124,0,1) 0%, rgba(255,255,255,0) 70%);
+}
+
+.gradient__2 {
+	position: absolute;
+	left: 250px;
+	width: 500px;
+	height: 500px;
+	border-radius: 100%;
+	background: radial-gradient(circle, rgba(255,34,0,1) 0%, rgba(255,255,255,0) 70%);
+}

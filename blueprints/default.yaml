@@ -1,0 +1,30 @@
+title: default
+"@extends": default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.display_title:
+              ordering@: header.title
+              type: text
+              style: vertical
+              label: Display Title
+
+        options:
+          fields:
+            publishing:
+              fields:
+                header.page_title:
+                  type: text
+                  label: Page Title
+
+                header.meta_description:
+                  type: text
+                  label: Meta Description
+
+                header.meta_image:
+                  label: Meta Image
+                  type: pagemediaselect

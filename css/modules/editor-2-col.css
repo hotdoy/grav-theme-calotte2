@@ -1,0 +1,24 @@
+.module.editor-2-col {}
+
+.editor-2-col .wrapper {
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+	width: 100%;
+	max-width: var(--w-tight);
+	
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+}
+
+@media (min-width: 835px) {
+	.editor-2-col .wrapper {
+	    grid-template-columns: repeat(2, 1fr);
+	    grid-gap: 10%;
+	}
+}
+
+.module.editor-2-col .left *:first-child,
+.module.editor-2-col .right *:first-child {
+    margin-top: 0;
+}

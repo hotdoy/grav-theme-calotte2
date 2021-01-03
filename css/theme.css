@@ -1,0 +1,120 @@
+/*===========================================
+					FONTS 
+============================================*/
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/roboto/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/roboto/roboto-v20-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto/roboto-v20-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/roboto/roboto-v20-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto/roboto-v20-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500italic - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/roboto/roboto-v20-latin-500italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/roboto/roboto-v20-latin-500italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lexend-deca-regular - latin */
+@font-face {
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/lexend-deca/lexend-deca-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/lexend-deca/lexend-deca-v4-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/*===========================================
+					ROOT 
+============================================*/
+
+:root {
+  --font-base: 'Roboto', sans-serif;
+  --font-alt: 'Lexend Deca', sans-serif;
+  font-size: medium;
+  font-family: var(--font-base);
+
+  /*COLOR*/
+  --c-white: white;
+  --c-black: #313239;
+  --c-grey: grey;
+  --c-grey-lite: #f1f1f1;
+  --c-orange: #ff5b01;
+  --c-orange-lite: #FF9961;
+  --c-orange-ultralite: #FFEDE3;
+
+  --c-bg: var(--c-white);
+  --c-fg: var(--c-black);
+
+  --c-hl: var(--c-orange);
+  --c-hl-lite: var(--c-orange-lite);
+  --c-hl-ultralite: var(--c-orange-ultralite);
+
+  --c-btn-bg: var(--c-hl);
+  --c-btn-fg: white;
+  --c-placeholder: #ced4da;
+
+  /*SHADOW*/
+  --s-card: 0 13px 27px -5px rgba(50,50,93,0.25),0 8px 16px -8px rgba(0,0,0,0.3);
+
+  /*WIDTH*/
+  --w-text: 735px;
+  --w-tight: 1000px;
+  --w-body: 1400px;
+  --w-full: 1920px;
+
+  /*RADIUS*/
+  --r-null: 0px;
+  --r-small: 4px;
+  --r-medium: 8px;
+  --r-large: 20px;
+
+  /*FONT-WEIGHT */
+  --fw-regular: 400;
+  --fw-bold: 500;
+
+  /*SPECIAL*/
+  --gutter: 20px;
+  --rhythm: 100px;
+  --header-height: 48px;
+}
+
+@media (min-width: 835px) {
+  :root {
+    --rhythm: 160px;
+  }
+}
+
+body {
+  color: var(--c-fg);
+  background-color: var(--c-bg);
+}
+
+::selection {
+  background-color: var(--c-hl);
+  color: var(--c-white);
+}

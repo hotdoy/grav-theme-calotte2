@@ -1,0 +1,11 @@
+article.card h3 {
+	margin-top: 1rem!important;
+}
+
+article.card h3 + p {
+    margin-top: 0.5rem;
+}
+
+article.card p {
+    color: var(--c-grey);
+}

@@ -1,0 +1,11 @@
+{% if theme.snipcart_enabled and theme.snipcart_public_key %}
+<div 
+id="snipcart" 
+data-api-key="{{ theme.snipcart_public_key }}" 
+{% if not theme.snipcart_product_behavior %}
+data-config-add-product-behavior="none"
+{% endif %}
+hidden>
+</div>
+{% endif %}
+
