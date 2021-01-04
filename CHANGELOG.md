@@ -1,3 +1,11 @@
+# v1.0.5
+##  01/04/2022
+
+1. [](#improved)
+    * Main min-height.
+    * Splash heading texture.
+    * SVG color.
+
 # v1.0.4
 ##  01/04/2022
 
