@@ -1,5 +1,9 @@
 /*.page.default {}*/
 
+.page.default #main {
+    min-height: 80vh;
+} 
+
 .default__heading {
     padding: 0 var(--gutter);
     margin: 0 auto;
@@ -25,3 +29,4 @@
     text-align: center;
     margin-bottom: var(--gutter);
 }
+
