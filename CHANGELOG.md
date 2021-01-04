@@ -1,3 +1,10 @@
+# v1.0.3
+##  01/04/2022
+
+1. [](#improved)
+    * htaccess
+    * webmanifest
+
 # v1.0.2
 ##  01/03/2022
 
