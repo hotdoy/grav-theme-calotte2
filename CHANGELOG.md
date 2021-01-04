@@ -1,3 +1,10 @@
+# v1.0.4
+##  01/04/2022
+
+1. [](#fixed)
+    * Missing Calotte svg title.
+    * Missing ul tag in footer.
+
 # v1.0.3
 ##  01/04/2022
 
