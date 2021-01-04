@@ -45,7 +45,7 @@
     letter-spacing: 1px;
 }
 
-.footer__nav>li:not(:first-child) {
+.footer__nav ul>li:not(:first-child) {
     margin-top: 1rem;
 }
 

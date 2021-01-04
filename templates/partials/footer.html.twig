@@ -4,12 +4,14 @@
 	<div class="footer__wrapper text small">
 		<div class="footer__top">
 			<nav class="footer__nav">
-	            {% for item in root_params.header.footer_nav %}
-	            <li data-scroll>
-	                {% set p = page.find(item.page) %}
-	                <a href="{{ p.url() }}">{{ item.label }}</a>
-	            </li>
-	            {% endfor %}   
+				<ul>
+		            {% for item in root_params.header.footer_nav %}
+		            <li data-scroll>
+		                {% set p = page.find(item.page) %}
+		                <a href="{{ p.url() }}">{{ item.label }}</a>
+		            </li>
+		            {% endfor %}
+	            </ul>
 			</nav>
 		</div>
 		<div class="footer__bottom">
