@@ -16,16 +16,6 @@
 	background-color: var(--c-blue-dark);
 	color: var(--c-bg);
 	opacity: 0;
-
-	animation-name: splash-heading;
-	animation-delay: 2s;
-	animation-duration: 10s;
-	animation-fill-mode: forwards;
-}
-
-@keyframes splash-heading {
-	from {}
-	to {background-color: #000000;}
 }
 
 .splash__heading h1 {
@@ -41,6 +31,31 @@
 	}
 }
 
+.splash__heading .img-ctn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+
+.splash__heading img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	animation-name: splash-fadein;
+	animation-delay: 1s;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes splash-fadein {
+	from { opacity: 0; transform: scale(1.3) rotate(10deg); }
+	to { opacity: 0.2; transform: scale(1.1) rotate(0deg); }
+}
 
 /*PAGE-STATE TRANSITIONS*/
 [data-page-state^='complete'] .splash__heading {
